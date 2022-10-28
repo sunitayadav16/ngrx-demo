@@ -1,0 +1,29 @@
+<h2>Customers</h2>
+<table class="table table-striped">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Id</th>
+      <th scope="col">UserId</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+    </tr>
+    <tr>
+    <tr *ngFor="let post of customers$ | async">
+      <th >{{post.id}}</th>
+      <td>{{post.userId}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+      <td>
+        <a (click)=editCustomer(post) aria-hidden="true">Edit</a>
+        <br>
+        <a (click)=deleteCustomer(post) aria-hidden="true">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

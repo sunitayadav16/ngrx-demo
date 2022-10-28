@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-customer-add [cusDetails] = "cusDetails"></app-customer-add>
+        </div>
+        <div class="col-md-6">
+            <app-customer-list (sendCusDetails)="fetchCustomerDetails($event)"></app-customer-list>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+  <h3>Add Customer Post</h3>
+    <form></form>
+    <label class="sr-only" for="UserId">UserId</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" [(ngModel)]="postForm.userId" placeholder="Phone">
+    </div>
+
+    <label class="sr-only" for="Title">Title</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" [(ngModel)]="postForm.title" placeholder="Address">
+    </div>
+
+    <label class="sr-only" for="Body">Body</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" [(ngModel)]="postForm.body" placeholder="Address">
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-2" (click)="createPost()">Add</button>
+

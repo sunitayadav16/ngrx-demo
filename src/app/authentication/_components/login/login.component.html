@@ -1,0 +1,53 @@
+<section class="mainScreen">
+    <div class="loginForm">
+      <h3 class="text-left"> {{'auth.login' | translate}}</h3>
+      <div class="loginSection">
+
+        <form [formGroup]="loginForm">
+  
+          <div class="form-group">
+            <label>{{'auth.username' | translate}}</label>
+            <input class="form-control" type="text" formControlName="email">
+            <div class="help-block" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+              <p>{{'errorMesages.auth.emailError' | translate}}</p>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>{{'auth.password' | translate}}</label>
+            <input class="form-control" type="password" formControlName="password">
+            <div class="help-block" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+              <p>{{'errorMesages.auth.passwordError' | translate}}</p>
+            </div>
+          </div>
+         
+          <div class="text-right mr-2">
+            <button type="submit" class="btn btn-success" (click)="onLogin()">
+              {{'auth.login' | translate}}
+            </button>
+          </div>
+
+        </form>
+
+        <div class="langSelect">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul style="list-style-type: none; justify-content:center;" >
+                  <ng-container *ngFor="let lang of allLanguages;" >
+                    <li *ngIf ="lang !== switchLang" class ="d-inline" >
+                      <a href="javscript:void(0)" (click) ="selectedLanguage(lang)" 
+                      style="text-decoration: none; margin : 4px" >
+                       {{lang == 'en'? 'English -' : lang == 'nl'? 'Dutch -': 'German'}}</a>
+                     </li>
+                  </ng-container>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>

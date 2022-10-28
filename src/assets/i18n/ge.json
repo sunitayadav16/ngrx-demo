@@ -1,0 +1,13 @@
+{
+    "auth": {
+        "username": "Email",
+        "password": "Passwort",
+        "login" : "Anmeldung"
+    },
+    "errorMesages" :{
+        "auth" :{
+            "emailError" : "E-Mail erforderlich.",
+            "passwordError" : "Passwort erforderlich."
+        }
+    }
+}
